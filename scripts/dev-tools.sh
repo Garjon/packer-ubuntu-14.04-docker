@@ -1,3 +1,4 @@
 #!/bin/bash
 
-apt-get -yq install dstat
+apt-get update
+apt-get -yq install git
