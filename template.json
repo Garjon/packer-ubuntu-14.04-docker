@@ -6,7 +6,7 @@
     "builders": [
         {
             "type": "virtualbox-iso",
-            "vm_name": "ubuntu",
+            "vm_name": "ubuntu-docker",
             "headless": true,
             "iso_url": "../images/ubuntu-14.04.3-server-amd64.iso",
             "iso_checksum": "a3b345908a826e262f4ea1afeb357fd09ec0558cf34e6c9112cead4bb55ccdfb",
@@ -65,6 +65,11 @@
         {
             "type": "shell",
             "scripts": "scripts/docker-compose.sh",
+            "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'"
+        },
+        {
+            "type": "shell",
+            "scripts": "scripts/filebeat.sh",
             "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'"
         },
         {
