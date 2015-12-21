@@ -69,7 +69,7 @@
         },
         {
             "type": "shell",
-            "scripts": "scripts/filebeat.sh",
+            "scripts": "scripts/rsyslog.sh",
             "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'"
         },
         {
